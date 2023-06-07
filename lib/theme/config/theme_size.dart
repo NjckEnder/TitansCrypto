@@ -1,4 +1,4 @@
-part of config;
+part of theme;
 
 class ThemeSizes {
   static const small = 8.0;

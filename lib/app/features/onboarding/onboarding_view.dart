@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:titans_crypto/app/models/onboarding_model.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
-import 'package:titans_crypto/theme/config/config.dart';
+import 'package:titans_crypto/theme/config/theme_data.dart';
 import 'package:titans_crypto/theme/helper/helper.dart';
 
 class OnboardingView extends StatefulWidget {

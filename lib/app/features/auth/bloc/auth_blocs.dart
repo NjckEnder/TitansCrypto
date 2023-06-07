@@ -7,7 +7,7 @@ part 'auth_events.dart';
 part 'auth_states.dart';
 
 class AuthBlocs extends Bloc<AuthEvents, AuthStates> {
-  AuthBlocs() : super(const AuthStates()){
+  AuthBlocs() : super(AuthStateSignIn()){
     on<AuthEventChangeTab>((event,emit){
         emit(
           event.isSignIn ?

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
-import 'package:titans_crypto/theme/config/config.dart';
+import 'package:titans_crypto/theme/config/theme_data.dart';
 import 'package:titans_crypto/theme/helper/helper.dart';
 
 class SplashView extends StatefulWidget {
