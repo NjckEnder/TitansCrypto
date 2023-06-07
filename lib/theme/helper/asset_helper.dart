@@ -11,5 +11,5 @@ class AppImageAssets{
 }
 
 class AppIconsAssets{
-  // static const eyeSlash = 'assets/icons/eye-slash_icon.svg';
+  static const eyeSlash = 'assets/icons/eye-slash_icon.svg';
 }

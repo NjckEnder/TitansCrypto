@@ -1,4 +1,4 @@
-part of widgets;
+part of app_widgets;
 
 class AppImages extends StatelessWidget {
   final String _urlImage;

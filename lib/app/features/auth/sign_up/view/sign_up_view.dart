@@ -5,6 +5,6 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Sign Up View'));
+    return const Center(child: Text('Sign Up View'));
   }
 }

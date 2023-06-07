@@ -1,4 +1,4 @@
-part of widgets;
+part of app_widgets;
 
 class AppButton extends StatelessWidget {
   final EdgeInsets? padding;

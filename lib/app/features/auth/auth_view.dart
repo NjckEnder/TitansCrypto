@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:titans_crypto/app/features/auth/bloc/auth_blocs.dart';
-import 'package:titans_crypto/app/features/auth/bloc/auth_events.dart';
-import 'package:titans_crypto/app/features/auth/bloc/auth_states.dart';
 import 'package:titans_crypto/app/features/auth/button_auth.dart';
 import 'package:titans_crypto/app/features/auth/sign_in/view/sign_in_view.dart';
 import 'package:titans_crypto/app/features/auth/sign_up/view/sign_up_view.dart';
-import 'package:titans_crypto/app/widgets/widgets.dart';
+import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/config.dart';
 
 class AuthView extends StatefulWidget {

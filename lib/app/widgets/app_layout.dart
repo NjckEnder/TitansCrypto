@@ -1,4 +1,4 @@
-part of widgets;
+part of app_widgets;
 
 class AppViewLayout extends StatelessWidget {
   final Widget? mobileView;

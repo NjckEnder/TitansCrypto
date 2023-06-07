@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/widgets/widgets.dart';
+import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/config.dart';
 import 'package:titans_crypto/theme/helper/helper.dart';
 

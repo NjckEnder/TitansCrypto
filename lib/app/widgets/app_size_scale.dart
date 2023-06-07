@@ -1,4 +1,4 @@
-part of widgets;
+part of app_widgets;
 
 class AppSizeScale extends StatelessWidget {
   final double? ratioWidth;

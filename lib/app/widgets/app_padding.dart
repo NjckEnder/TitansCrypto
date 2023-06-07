@@ -1,4 +1,4 @@
-part of widgets; 
+part of app_widgets; 
 
 enum AppGapSize {
   none(0),

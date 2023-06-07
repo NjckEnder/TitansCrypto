@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titans_crypto/app/features/auth/auth_view.dart';
-// import 'package:titans_crypto/app/features/home_page/home_page.dart';
-import 'package:titans_crypto/app/features/onboarding/view/onboarding_view.dart';
+import 'package:titans_crypto/app/features/onboarding/onboarding_view.dart';
 
 class AppRoutes {
   static Route onGenerateRoute(RouteSettings settings) {

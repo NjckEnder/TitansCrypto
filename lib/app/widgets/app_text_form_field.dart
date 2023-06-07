@@ -1,4 +1,4 @@
-part of widgets;
+part of app_widgets;
 
 enum AppTextFormFieldType { email, password, phone, text }
 
@@ -42,7 +42,7 @@ class AppTextFormField extends StatelessWidget {
   })  : _type = AppTextFormFieldType.password,
         obscureText = true;
         // prefixIcon = errorText == null
-        //     ? const AppIcons.password()
+        //     ? const SvgPicture.asset(AppIconsAssets.eyeSlash)
         //     : const AppIcons.password(color: Colors.redAccent);
 
   const AppTextFormField.email({

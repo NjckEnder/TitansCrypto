@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/widgets/widgets.dart';
+import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/config.dart';
 
 class SignInView extends StatelessWidget {
@@ -28,7 +28,8 @@ class SignInView extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ],
-        )
+        ),
+        AppTextFormField.email(hintText: 'Enter your email', controller: TextEditingController())
       ],
     );
   }

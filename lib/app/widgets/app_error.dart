@@ -1,4 +1,4 @@
-part of widgets;
+part of app_widgets;
 
 class AppErrorWidget extends StatelessWidget {
   final String? message;

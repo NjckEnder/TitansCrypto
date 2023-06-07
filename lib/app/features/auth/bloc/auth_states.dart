@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of auth_blocs;
 
 class AuthStates extends Equatable {
   const AuthStates();
