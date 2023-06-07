@@ -1,4 +1,4 @@
-part of config;
+part of theme;
 
 class ThemeColors{
   static const backgroundColor = Color(0xFF1B232A);

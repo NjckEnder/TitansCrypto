@@ -5,7 +5,7 @@ import 'package:titans_crypto/app/features/auth/button_auth.dart';
 import 'package:titans_crypto/app/features/auth/sign_in/view/sign_in_view.dart';
 import 'package:titans_crypto/app/features/auth/sign_up/view/sign_up_view.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
-import 'package:titans_crypto/theme/config/config.dart';
+import 'package:titans_crypto/theme/config/theme_data.dart';
 
 class AuthView extends StatefulWidget {
   static const String routeName = "/authView";
@@ -20,7 +20,9 @@ class _AuthViewState extends State<AuthView> {
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => AuthBlocs(),
-        child: BlocBuilder<AuthBlocs, AuthStates>(builder: (context, state) {
+        child: BlocBuilder<AuthBlocs, AuthStates>(
+          // bloc: AuthBlocs.,
+          builder: (context, state) {
           return AppViewLayout(
               mobileView: Scaffold(
                   backgroundColor: ThemeColors.backgroundColor,

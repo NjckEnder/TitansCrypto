@@ -1,4 +1,4 @@
-part of config;
+part of theme;
 
 class ThemeText {
   static const TextStyle displayLarge =
