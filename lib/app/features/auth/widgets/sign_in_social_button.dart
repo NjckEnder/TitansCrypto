@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/widgets/app_widgets.dart';
-import 'package:titans_crypto/theme/config/theme_data.dart';
+part of sign_in_view;
 
 class SignInSocialButton extends StatelessWidget {
   final String title;

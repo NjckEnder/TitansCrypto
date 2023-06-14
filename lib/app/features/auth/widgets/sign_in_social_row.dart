@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/features/auth/sign_in/view/sign_in_social_button.dart';
-import 'package:titans_crypto/app/widgets/app_widgets.dart';
+part of sign_in_view;
 
 class SignInRowButton extends StatelessWidget {
   const SignInRowButton({super.key});
