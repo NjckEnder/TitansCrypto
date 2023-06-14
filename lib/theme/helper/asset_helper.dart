@@ -12,4 +12,9 @@ class AppImageAssets{
 
 class AppIconsAssets{
   static const eyeSlash = 'assets/icons/eye-slash_icon.svg';
+
+  static const google = 'assets/icons/google_icon.svg';
+  static const facebook = 'assets/icons/facebook_icon.svg';
+
+  static const fingerOn = 'assets/icons/finger-on_icon.svg';
 }
