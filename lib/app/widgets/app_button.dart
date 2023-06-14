@@ -7,7 +7,7 @@ class AppButton extends StatelessWidget {
   final String title;
   final double _ratio;
   final Color? color;
-  final Color? titleColor;
+  // final Color? titleColor;
 
   const AppButton.min({
     super.key,
@@ -16,7 +16,7 @@ class AppButton extends StatelessWidget {
     this.margin,
     this.onPressed,
     this.color,
-    this.titleColor,
+    // this.titleColor,
   }) : _ratio = 0.45;
   const AppButton.max({
     super.key,
@@ -25,7 +25,7 @@ class AppButton extends StatelessWidget {
     this.margin,
     this.onPressed,
     this.color,
-    this.titleColor,
+    // this.titleColor,
   }) : _ratio = 1;
 
   @override
@@ -55,7 +55,7 @@ class AppButton extends StatelessWidget {
           child: FittedBox(
               child: Text(
             title,
-            style: ThemeText.bodyMedium.copyWith(color: titleColor),
+            // style: ThemeText.bodyMedium.copyWith(color: titleColor),
           )),
         ),
       ),

@@ -26,7 +26,7 @@ class ThemePrimary {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
           foregroundColor: ThemeColors.textColor3,
-          textStyle: ThemeText.bodyMedium,
+          textStyle: ThemeText.titleSmall.copyWith(fontWeight: FontWeight.w400),
           elevation: 0,
         ),
       ),
