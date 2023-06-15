@@ -37,6 +37,14 @@ dependencies:
   flutter_bloc: ^8.1.2
   equatable: ^2.0.5
   smooth_page_indicator: ^1.1.0
+  firebase_auth: ^4.6.3
+  cloud_firestore: ^4.8.1
+  firebase_storage: ^11.2.3
+  path: ^1.8.2
+  shared_preferences: ^2.1.2
+  firebase_messaging: ^14.6.3
+  get_it: ^7.6.0
+  http: ^0.13.6
 
 dev_dependencies:
   flutter_test:

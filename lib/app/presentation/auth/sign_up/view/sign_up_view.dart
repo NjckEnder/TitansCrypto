@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/features/auth/sign_in/view/sign_in_view.dart';
+import 'package:titans_crypto/app/presentation/auth/sign_in/view/sign_in_view.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
