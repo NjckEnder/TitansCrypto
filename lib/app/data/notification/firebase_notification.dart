@@ -1,0 +1,62 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:titans_crypto/app/data/models/notification.dart';
+import 'package:titans_crypto/app/data/models/user_personal_inf.dart';
+import 'package:titans_crypto/app/data/notification/device_notification.dart';
+import 'package:titans_crypto/app/data/user/firestore_user_info.dart';
+
+final injector = GetIt.I;
+
+class FireStoreNotification{
+  static final _fireStoreUserCollection =
+      FirebaseFirestore.instance.collection('users');
+  static Future<UserPersonalInfo> createNewDeviceToken(
+      {required String userId,
+      required UserPersonalInfo myPersonalInfo}) async {
+    final SharedPreferences sharePrefs = injector<SharedPreferences>();
+
+    String? token = await FirebaseMessaging.instance.getToken();
+
+    if (token != null && !(myPersonalInfo.deviceToken == token)) {
+      await _fireStoreUserCollection.doc(userId).update({'deviceToken': token});
+      myPersonalInfo.deviceToken = token;
+      await sharePrefs.setString("deviceToken", token);
+    }
+    return myPersonalInfo;
+  }
+
+  static Future<String> createNotification(
+      CustomNotification newNotification) async {
+    DocumentReference<Map<String, dynamic>> userCollection =
+        _fireStoreUserCollection.doc(newNotification.receiverId);
+    userCollection
+        .update({"numberOfNewNotifications": FieldValue.increment(1)});
+    UserPersonalInfo receiverInfo =
+        await FirestoreUser.getUserInfo(newNotification.receiverId);
+    String token = receiverInfo.deviceToken;
+    if (token.isNotEmpty) {
+      await DeviceNotification.pushNotification(
+          customNotification: newNotification, token: token);
+    }
+    return await _createNotification(newNotification);
+  }
+  
+  static Future<String> _createNotification(
+      CustomNotification newNotification) async {
+    DocumentReference<Map<String, dynamic>> userCollection =
+        _fireStoreUserCollection.doc(newNotification.receiverId);
+
+    CollectionReference<Map<String, dynamic>> collection =
+        userCollection.collection("notifications");
+    DocumentReference<Map<String, dynamic>> addingCollection =
+        await collection.add(newNotification.toMap());
+
+    newNotification.notificationUid = addingCollection.id;
+    await addingCollection
+        .update({"notificationUid": newNotification.notificationUid});
+
+    return newNotification.notificationUid;
+  }
+}
