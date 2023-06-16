@@ -33,7 +33,7 @@ class SignUpView extends StatelessWidget {
             padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
             child: AppTextFormField.email(
               hintText: 'Please enter email',
-              controller: TextEditingController(),
+              // controller: TextEditingController(),
             )),
         const AppText.bodyMedium(
           text: 'Password',
@@ -43,7 +43,7 @@ class SignUpView extends StatelessWidget {
             padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
             child: AppTextFormField.password(
               hintText: 'Enter your password',
-              controller: TextEditingController(),
+              // controller: TextEditingController(),
             )),
         AppPadding(
             padding: const AppEdgeInsets.only(top: AppGapSize.medium),

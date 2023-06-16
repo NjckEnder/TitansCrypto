@@ -21,16 +21,10 @@ class _AuthViewState extends State<AuthView> {
     return BlocProvider(
         create: (context) => AuthBlocs(),
         child: BlocBuilder<AuthBlocs, AuthChangeStates>(
-            // bloc: AuthBlocs.,
             builder: (context, state) {
           return AppViewLayout(
               mobileView: Scaffold(
                   backgroundColor: ThemeColors.backgroundColor,
-                  // appBar: AppBar(
-                  //   automaticallyImplyLeading: false,
-                  //   backgroundColor: Colors.transparent,
-                  //   elevation: 0,
-                  // ),
                   body: SingleChildScrollView(
                     child: AppPadding(
                         padding: const AppEdgeInsets.symmetric(
