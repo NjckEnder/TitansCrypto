@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:titans_crypto/app/data/models/notification.dart';
 import 'package:titans_crypto/app/data/models/user_personal_inf.dart';
 import 'package:titans_crypto/app/data/notification/device_notification.dart';
-import 'package:titans_crypto/app/data/user/firestore_user_info.dart';
+// import 'package:titans_crypto/app/data/user/firestore_user_info.dart';
 
 final injector = GetIt.I;
 

@@ -1,14 +1,10 @@
-library sign_in_view;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:titans_crypto/app/presentation/auth/bloc/auth_blocs.dart';
+import 'package:titans_crypto/app/data/user/firebase_auth.dart';
 import 'package:titans_crypto/app/presentation/auth/sign_in/bloc/sign_in_blocs.dart';
+import 'package:titans_crypto/app/presentation/auth/widgets/widgets_auth.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
-
-part '../../widgets/sign_in_social_row.dart';
-part '../../widgets/sign_in_social_button.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -18,78 +14,138 @@ class SignInView extends StatefulWidget {
 }
 
 class _SignInViewState extends State<SignInView> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    _emailController;
+    _passwordController;
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    //** TODO fix bug here*/
-    return BlocProvider<AuthBlocs>(
-      create: (context) => AuthBlocs(),
-      child: BlocProvider<SignInBloc>(
-        create: (context) => SignInBloc(),
-        child: BlocBuilder<SignInBloc, SignInState>(
-          builder: (context, state) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const AppPadding(
-                  padding: AppEdgeInsets.symmetric(vertical: AppGapSize.medium),
-                  child: AppText.headlineLarge(
-                    text: 'Sign in',
-                    color: ThemeColors.textColor1,
-                  )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppText.bodyMedium(
-                    text: 'Email',
-                    color: ThemeColors.textColor2,
-                  ),
-                  AppText.bodyMedium(
-                    text: 'Sign in with mobile',
-                  )
-                ],
-              ),
-              AppPadding(
-                  padding:
-                      const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-                  child: AppTextFormField.email(
-                      hintText: 'Enter your email',
-                      onChange: (email) =>
-                          context.read<SignInBloc>().add(EmailEvent(email)))),
-              const AppText.bodyMedium(
-                text: 'Password',
-                color: ThemeColors.textColor2,
-              ),
-              AppPadding(
-                  padding:
-                      const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-                  child: AppTextFormField.password(
-                      hintText: 'Enter your password',
-                      onChange: (password) => context
-                          .read<SignInBloc>()
-                          .add(PasswordEvent(password)))),
-              const AppText.bodyMedium(text: 'Forgot password?'),
-              AppPadding(
-                  padding: const AppEdgeInsets.only(top: AppGapSize.medium),
-                  child: AppButton.max(
-                    title: 'Sign in',
-                    onPressed: () {},
-                  )),
-              const AppPadding(
-                  padding: AppEdgeInsets.symmetric(vertical: AppGapSize.medium),
-                  child: Center(
-                      child: AppText.bodyMedium(
-                    text: 'Or login with ',
-                    color: ThemeColors.textColor4,
-                  ))),
-              const SignInRowButton(),
-              const AppPadding(
-                  padding: AppEdgeInsets.symmetric(vertical: AppGapSize.medium),
-                  child: Center(child: AppIcons.fingerOn())),
-              const Center(
-                  child: AppText.bodyMedium(
-                text: 'Use fingerprint instead?',
-                color: ThemeColors.textColor2,
-              )),
-            ],
+    return RepositoryProvider(
+      create: (context) => FirebaseAuthentication(),
+      child: BlocProvider(
+        create: (context) => AuthBloc(
+            authRepository:
+                RepositoryProvider.of<FirebaseAuthentication>(context)),
+        child: BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            if (state is Authenticated) {
+              Navigator.pushNamed(context, '/homePage');
+            }
+            if (state is AuthError) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                backgroundColor: Colors.transparent,
+                behavior: SnackBarBehavior.floating,
+                elevation: 0,
+                content: SizedBox(
+                    child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            color: const Color(0xffc72c41),
+                            borderRadius: BorderRadius.circular(16)),
+                        child: AppPadding.medium(
+                          child: AppText.bodyMedium(
+                              text: state.error,
+                              color: ThemeColors.textColor1),
+                        ))),
+              ));
+            }
+          },
+          child: BlocBuilder<AuthBloc, AuthState>(
+            builder: (context, state) {
+              if (state is Loading) {
+                return const Center(child: CircularProgressIndicator());
+              }
+
+              if (state is UnAuthenticated) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const AppPadding(
+                        padding: AppEdgeInsets.symmetric(
+                            vertical: AppGapSize.medium),
+                        child: AppText.headlineLarge(
+                          text: 'Sign in',
+                          color: ThemeColors.textColor1,
+                        )),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        AppText.bodyMedium(
+                          text: 'Email',
+                          color: ThemeColors.textColor2,
+                        ),
+                        AppText.bodyMedium(
+                          text: 'Sign in with mobile',
+                        )
+                      ],
+                    ),
+                    AppPadding(
+                        padding: const AppEdgeInsets.symmetric(
+                            vertical: AppGapSize.small),
+                        child: AppTextFormField.email(
+                          hintText: 'Enter your email',
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          // errorText:,
+                        )),
+                    const AppText.bodyMedium(
+                      text: 'Password',
+                      color: ThemeColors.textColor2,
+                    ),
+                    AppPadding(
+                        padding: const AppEdgeInsets.symmetric(
+                            vertical: AppGapSize.small),
+                        child: AppTextFormField.password(
+                          hintText: 'Enter your password',
+                          controller: _passwordController,
+                        )),
+                    const AppText.bodyMedium(text: 'Forgot password?'),
+                    AppPadding(
+                        padding:
+                            const AppEdgeInsets.only(top: AppGapSize.medium),
+                        child: AppButton.max(
+                          title: 'Sign in',
+                          onPressed: () {
+                            BlocProvider.of<AuthBloc>(context).add(SignIn(
+                                _emailController.text,
+                                _passwordController.text));
+                          },
+                        )),
+                    const AppPadding(
+                        padding: AppEdgeInsets.symmetric(
+                            vertical: AppGapSize.medium),
+                        child: Center(
+                            child: AppText.bodyMedium(
+                          text: 'Or login with ',
+                          color: ThemeColors.textColor4,
+                        ))),
+                    const SignInRowButton(),
+                    const AppPadding(
+                        padding: AppEdgeInsets.symmetric(
+                            vertical: AppGapSize.medium),
+                        child: Center(child: AppIcons.fingerOn())),
+                    const Center(
+                        child: AppText.bodyMedium(
+                      text: 'Use fingerprint instead?',
+                      color: ThemeColors.textColor2,
+                    )),
+                  ],
+                );
+              }
+              return Container();
+            },
           ),
         ),
       ),

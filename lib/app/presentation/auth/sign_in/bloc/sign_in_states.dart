@@ -1,32 +1,30 @@
 part of sign_in_blocs;
 
-class SignInState {
-  final String email;
-  final String password;
-  final bool isValid;
-  final String? errorMessage;
+abstract class AuthState extends Equatable {}
 
-  const SignInState({
-    this.email = "",
-    this.password = "",
-    this.isValid = false,
-    this.errorMessage,
-  });
-
+// When the user presses the signin or signup button the state is changed to loading first and then to Authenticated.
+class Loading extends AuthState {
   @override
-  List<Object?> get props => [email, password, isValid, errorMessage];
+  List<Object?> get props => [];
+}
 
-  SignInState copyWith({
-    String? email,
-    String? password,
-    bool? isValid,
-    String? errorMessage,
-  }) {
-    return SignInState(
-      email: email ?? this.email,
-      password: password ?? this.password,
-      isValid: isValid ?? this.isValid,
-      errorMessage: errorMessage ?? this.errorMessage,
-    );
-  }
+// When the user is authenticated the state is changed to Authenticated.
+class Authenticated extends AuthState {
+  @override
+  List<Object?> get props => [];
+}
+
+// This is the initial state of the bloc. When the user is not authenticated the state is changed to Unauthenticated.
+class UnAuthenticated extends AuthState {
+  @override
+  List<Object?> get props => [];
+}
+
+// If any error occurs the state is changed to AuthError.
+class AuthError extends AuthState {
+  final String error;
+
+  AuthError(this.error);
+  @override
+  List<Object?> get props => [error];
 }

@@ -1,30 +1,28 @@
 part of sign_in_blocs;
 
-abstract class SignInEvent{
-  const SignInEvent();
+abstract class AuthEvent extends Equatable {
+  @override
+  List<Object> get props => [];
 }
 
-class EmailEvent extends SignInEvent{
+// When the user signing in with email and password this event is called and the [AuthRepository] is called to sign in the user
+class SignIn extends AuthEvent {
   final String email;
-  const EmailEvent(this.email);
-}
-
-class PasswordEvent extends SignInEvent{
   final String password;
-  const PasswordEvent(this.password);
+
+  SignIn(this.email, this.password);
 }
 
-class HideShowPasswordEvent extends SignInEvent {
-  // final bool isHide;
-  // HideShowPasswordEvent({this.isHide});
+// When the user signing up with email and password this event is called and the [AuthRepository] is called to sign up the user
+class SignUp extends AuthEvent {
+  final String email;
+  final String password;
+
+  SignUp(this.email, this.password);
 }
 
-class ContinuePhoneEvent extends SignInEvent {
-  final String phone;
-  ContinuePhoneEvent(this.phone);
-}
+// When the user signing in with google this event is called and the [AuthRepository] is called to sign in the user
+class GoogleSignIn extends AuthEvent {}
 
-class GoogleEvent extends SignInEvent{}
-
-class FacebookEvent extends SignInEvent{}
-
+// When the user signing out this event is called and the [AuthRepository] is called to sign out the user
+class SignOut extends AuthEvent {}

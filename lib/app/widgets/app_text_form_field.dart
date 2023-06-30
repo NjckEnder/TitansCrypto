@@ -6,8 +6,8 @@ class AppTextFormField extends StatelessWidget {
   // final Widget? prefixIcon;
   final bool? obscureText;
   final String hintText;
-  final Function(String)? onChange;
-  // final TextEditingController controller;
+  // final Function(String)? onChange;
+  final TextEditingController controller;
   final String? errorText;
   final TextStyle? textStyle;
   final AppTextFormFieldType _type;
@@ -26,8 +26,8 @@ class AppTextFormField extends StatelessWidget {
       this.decoration,
       this.textStyle,
       this.maxLines = 1,
-      // required this.controller,
-      this.onChange,
+      required this.controller,
+      // this.onChange,
       this.keyboardType})
       : _type = AppTextFormFieldType.text;
 
@@ -40,8 +40,8 @@ class AppTextFormField extends StatelessWidget {
     this.keyboardType,
     this.enabled,
     this.decoration,
-    // required this.controller,
-    this.onChange,
+    required this.controller,
+    // this.onChange,
   })  : _type = AppTextFormFieldType.password,
         obscureText = true;
         // prefixIcon = errorText == null
@@ -57,8 +57,8 @@ class AppTextFormField extends StatelessWidget {
     this.decoration,
     this.enabled,
     this.keyboardType,
-    // required this.controller,
-    this.onChange,
+    required this.controller,
+    // this.onChange,
   })  : _type = AppTextFormFieldType.email,
         obscureText = false;
         // prefixIcon = errorText == null
@@ -74,8 +74,8 @@ class AppTextFormField extends StatelessWidget {
     this.maxLines = 1,
     this.decoration,
     this.enabled,
-    // required this.controller,
-    this.onChange,
+    required this.controller,
+    // this.onChange,
   })  : _type = AppTextFormFieldType.phone,
         obscureText = false;
         // prefixIcon = null;
@@ -83,8 +83,8 @@ class AppTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: onChange,
-      // controller: controller,
+      // onChanged: onChange,
+      controller: controller,
       enabled: enabled,
       keyboardType: keyboardType ??
           (_type == AppTextFormFieldType.email

@@ -1,4 +1,4 @@
-part of sign_in_view;
+part of widgets;
 
 class SignInRowButton extends StatelessWidget {
   const SignInRowButton({super.key});
