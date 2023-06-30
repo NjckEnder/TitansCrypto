@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 
 import 'package:titans_crypto/app/data/models/user_personal_inf.dart';
-import 'package:titans_crypto/app/data/notification/firebase_notification.dart';
+import 'package:titans_crypto/app/data/notification/firebase_notification.txt';
 import 'package:titans_crypto/app/data/user/firebase_storage.dart';
-import 'package:titans_crypto/app/data/user/firestore_user_info.dart';
+// import 'package:titans_crypto/app/data/user/firestore_user_info.dart';
 import 'package:titans_crypto/app/domain/repositories/user_repository.dart';
 
 bool isThatMobile = true;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/presentation/auth/sign_in/view/sign_in_view.dart';
+import 'package:titans_crypto/app/presentation/auth/widgets/widgets_auth.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
@@ -29,26 +29,28 @@ class SignUpView extends StatelessWidget {
             )
           ],
         ),
-        AppPadding(
-            padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-            child: AppTextFormField.email(
-              hintText: 'Please enter email',
+        const AppPadding(
+            padding: AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+            // child: AppTextFormField.email(
+              // hintText: 'Please enter email',
               // controller: TextEditingController(),
-            )),
+            // )
+            ),
         const AppText.bodyMedium(
           text: 'Password',
           color: ThemeColors.textColor2,
         ),
-        AppPadding(
-            padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-            child: AppTextFormField.password(
-              hintText: 'Enter your password',
+        const AppPadding(
+            padding: AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+            // child: AppTextFormField.password(
+              // hintText: 'Enter your password',
               // controller: TextEditingController(),
-            )),
+            // )
+            ),
         AppPadding(
             padding: const AppEdgeInsets.only(top: AppGapSize.medium),
             child: AppButton.max(
-              title: 'Sign in',
+              title: 'Sign up',
               onPressed: () {},
             )),
         const AppPadding(

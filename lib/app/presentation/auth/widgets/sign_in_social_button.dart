@@ -1,4 +1,4 @@
-part of sign_in_view;
+part of widgets;
 
 class SignInSocialButton extends StatelessWidget {
   final String title;
