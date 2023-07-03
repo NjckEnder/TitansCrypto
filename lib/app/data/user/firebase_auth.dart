@@ -27,25 +27,7 @@ class FirebaseAuthentication {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'invalid-email') {
-        throw ('The email address is not valid.');
-      } else if (e.code == 'user-disabled') {
-        throw ('The user corresponding to the given email has been disabled.');
-      } else if (e.code == 'user-not-found') {
-        throw ('There is no user corresponding to the given email.');
-      } else if (e.code == 'wrong-password') {
-        throw ('The password is invalid for the given email, or the account corresponding to the email does not have a password set.');
-      }
-
-      // if (e.code == 'user-not-found') {
-      //   throw Exception('No user found for that email.');
-      // } else if (e.code == 'wrong-password') {
-      //   throw Exception('Wrong password provided for that user.');
-      // }
-      // else {
-      //handle other exceptions
-      //   print('Exception occurred: $e');
-      // }
+      throw (e.message.toString());
     }
   }
 

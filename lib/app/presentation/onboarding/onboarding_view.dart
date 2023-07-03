@@ -101,9 +101,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                                 duration: const Duration(milliseconds: 500),
                                 curve: Curves.ease);
                             if (currentSlide == 2) {
-                              Navigator.pushNamed(context, '/authView');
+                              Navigator.pushReplacementNamed(context, '/authView');
                             }
-                            // Navigator.pushNamed(context, '/authView');
                           },
                         ),
                       )

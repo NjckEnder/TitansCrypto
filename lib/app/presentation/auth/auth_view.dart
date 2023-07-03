@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:titans_crypto/app/presentation/auth/bloc/auth_blocs.dart';
+import 'package:titans_crypto/app/presentation/auth/bloc/change_auth_blocs.dart';
 import 'package:titans_crypto/app/presentation/auth/widgets/button_auth.dart';
 import 'package:titans_crypto/app/presentation/auth/sign_in/view/sign_in_view.dart';
 import 'package:titans_crypto/app/presentation/auth/sign_up/view/sign_up_view.dart';
@@ -20,7 +20,7 @@ class _AuthViewState extends State<AuthView> {
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => AuthBlocs(),
-        child: BlocBuilder<AuthBlocs, AuthChangeStates>(
+        child: BlocBuilder<AuthBlocs, ChangeAuthStates>(
             builder: (context, state) {
           return AppViewLayout(
               mobileView: Scaffold(
@@ -83,7 +83,7 @@ class _AuthViewState extends State<AuthView> {
         }));
   }
 
-  void _onChangeTabPage(BuildContext context, AuthChangeStates authStates) {
+  void _onChangeTabPage(BuildContext context, ChangeAuthStates authStates) {
     final isSignIn = authStates is AuthStateSignIn;
     BlocProvider.of<AuthBlocs>(context).add(AuthEventChangeTab(isSignIn));
   }
