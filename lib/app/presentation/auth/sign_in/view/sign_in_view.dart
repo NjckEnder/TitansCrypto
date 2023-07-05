@@ -78,13 +78,16 @@ class _SignInViewState extends State<SignInView> {
                       )),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      AppText.bodyMedium(
+                    children: [
+                      const AppText.bodyMedium(
                         text: 'Email',
                         color: ThemeColors.textColor2,
                       ),
-                      AppText.bodyMedium(
-                        text: 'Sign in with mobile',
+                      GestureDetector(
+                        onTap: () {},
+                        child: const AppText.bodyMedium(
+                          text: 'Sign in with mobile',
+                        ),
                       )
                     ],
                   ),
@@ -95,7 +98,6 @@ class _SignInViewState extends State<SignInView> {
                         hintText: 'Enter your email',
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
-                        // errorText:,
                       )),
                   const AppText.bodyMedium(
                     text: 'Password',
