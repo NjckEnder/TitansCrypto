@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:titans_crypto/app/widgets/app_widgets.dart';
 
 class MyHomePage extends StatefulWidget {
   static const String routeName = "/homePage";
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -23,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const AppText.bodyLarge(text: 'Home Page')
       ),
       body: Center(
         child: Column(

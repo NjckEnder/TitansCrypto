@@ -13,6 +13,4 @@ class SignUpSuccessEvent extends SignUpEvent {
 class HideShowPassEvent extends SignUpEvent{
   final bool isHide;
   HideShowPassEvent(this.isHide);
-  // @override
-  // List<Object> get props => [];
 }

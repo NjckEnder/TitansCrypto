@@ -3,8 +3,30 @@ import 'package:titans_crypto/app/presentation/auth/widgets/widgets_auth.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
-class SignUpView extends StatelessWidget {
+class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
+
+  @override
+  State<SignUpView> createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    _emailController;
+    _passwordController;
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +51,25 @@ class SignUpView extends StatelessWidget {
             )
           ],
         ),
-        const AppPadding(
-            padding: AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-            // child: AppTextFormField.email(
-              // hintText: 'Please enter email',
-              // controller: TextEditingController(),
-            // )
-            ),
+        AppPadding(
+          padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+          child: AppTextFormField.email(
+          hintText: 'Please enter email',
+          controller: _emailController,
+          keyboardType: TextInputType.emailAddress,
+          )
+        ),
         const AppText.bodyMedium(
           text: 'Password',
           color: ThemeColors.textColor2,
         ),
-        const AppPadding(
-            padding: AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-            // child: AppTextFormField.password(
-              // hintText: 'Enter your password',
-              // controller: TextEditingController(),
-            // )
-            ),
+        AppPadding(
+          padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+          child: AppTextFormField.password(
+          hintText: 'Enter your password',
+          controller: _passwordController,
+          )
+        ),
         AppPadding(
             padding: const AppEdgeInsets.only(top: AppGapSize.medium),
             child: AppButton.max(
