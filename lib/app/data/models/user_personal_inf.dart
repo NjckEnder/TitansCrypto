@@ -11,7 +11,6 @@ class UserInfo {
     this.errorMessage,
   });
 
-  @override
   List<Object?> get props => [email, password, isValid, errorMessage];
 
   UserInfo copyWith({

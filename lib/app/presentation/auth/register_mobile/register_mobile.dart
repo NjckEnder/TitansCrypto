@@ -19,13 +19,14 @@ class _RegisterWithMobileViewState extends State<RegisterWithMobileView> {
         appBar: AppBar(
           backgroundColor: ThemeColors.backgroundColor,
           elevation: 0,
-          // automaticallyImplyLeading: true,
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back,
               color: ThemeColors.textColor4,
             ),
-            onPressed: () {Navigator.pushReplacementNamed(context, '/authView');},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/authView');
+            },
           ),
           title: const AppText.titleMedium(
             text: 'Sign Up',
@@ -41,28 +42,33 @@ class _RegisterWithMobileViewState extends State<RegisterWithMobileView> {
                 text: 'Register with mobile',
                 color: ThemeColors.textColor1,
               ),
-               const AppPadding(
-                padding: AppEdgeInsets.only(top: AppGapSize.medium, bottom: AppGapSize.veryLarge),
-                 child: AppText.labelLarge(
+              const AppPadding(
+                padding: AppEdgeInsets.only(
+                    top: AppGapSize.medium, bottom: AppGapSize.veryLarge),
+                child: AppText.labelLarge(
                   text:
                       'Please type your number, then we’ll send a verification code for authentication.',
                   color: ThemeColors.textColor2,
                   textAlign: TextAlign.start,
-                             ),
-               ),
+                ),
+              ),
               const AppText.labelLarge(
                 text: 'Mobile Number',
                 color: ThemeColors.textColor2,
               ),
               AppPadding(
-                padding: const AppEdgeInsets.only(top: AppGapSize.small, bottom: AppGapSize.veryLarge),
+                padding: const AppEdgeInsets.only(
+                    top: AppGapSize.small, bottom: AppGapSize.veryLarge),
                 child: AppTextFormField.phone(
                     hintText: 'Enter your mobile',
                     controller: TextEditingController()),
               ),
               AppButton.max(
                 title: 'Send OTP',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                      context, '/verificationOTPCode');
+                },
               )
             ],
           ),
