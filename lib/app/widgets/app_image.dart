@@ -9,6 +9,8 @@ class AppImages extends StatelessWidget {
 
   const AppImages.onboard3({super.key}) : _urlImage = AppImageAssets.onboarding3;
 
+  // const AppImages.backgroundAuth({super.key}) : _urlImage = AppImageAssets.backgroundAuth;
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(_urlImage);

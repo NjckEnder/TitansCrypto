@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:titans_crypto/app/presentation/auth/bloc/change_auth_blocs.dart';
-import 'package:titans_crypto/app/presentation/auth/widgets/button_auth.dart';
-import 'package:titans_crypto/app/presentation/auth/sign_in/view/sign_in_view.dart';
-import 'package:titans_crypto/app/presentation/auth/sign_up/view/sign_up_view.dart';
+import 'package:titans_crypto/app/presentation/auth/sign_in/sign_in_view.dart';
+import 'package:titans_crypto/app/presentation/auth/sign_up/sign_up_view.dart';
+import 'package:titans_crypto/app/presentation/auth/widgets/widgets_auth.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
