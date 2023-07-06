@@ -2,6 +2,7 @@ library app_widgets;
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 import 'package:titans_crypto/theme/helper/helper.dart';

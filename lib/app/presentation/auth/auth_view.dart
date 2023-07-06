@@ -23,8 +23,7 @@ class _AuthViewState extends State<AuthView> {
         child: BlocBuilder<AuthBlocs, ChangeAuthStates>(
             builder: (context, state) {
           return AppViewLayout(
-              mobileView: Scaffold(
-                  backgroundColor: ThemeColors.backgroundColor,
+              mobileView: AppBackground(
                   body: SingleChildScrollView(
                     child: AppPadding(
                         padding: const AppEdgeInsets.symmetric(
