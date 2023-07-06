@@ -6,3 +6,5 @@ import 'package:titans_crypto/theme/config/theme_data.dart';
 
 part 'sign_in_social_button.dart';
 part 'sign_in_social_row.dart';
+part 'button_auth.dart';
+part 'background_auth.dart';

@@ -4,6 +4,7 @@ enum AppTextFormFieldType { email, password, phone, text }
 
 class AppTextFormField extends StatelessWidget {
   // final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final bool? obscureText;
   final String hintText;
   // final Function(String)? onChange;
@@ -19,6 +20,7 @@ class AppTextFormField extends StatelessWidget {
   const AppTextFormField(
       {super.key,
       // this.prefixIcon,
+      this.suffixIcon,
       required this.hintText,
       this.obscureText = false,
       this.errorText,
@@ -33,6 +35,7 @@ class AppTextFormField extends StatelessWidget {
 
   const AppTextFormField.password({
     super.key,
+    this.suffixIcon,
     required this.hintText,
     this.errorText,
     this.textStyle,
@@ -60,7 +63,8 @@ class AppTextFormField extends StatelessWidget {
     required this.controller,
     // this.onChange,
   })  : _type = AppTextFormFieldType.email,
-        obscureText = false;
+        obscureText = false,
+        suffixIcon = null;
         // prefixIcon = errorText == null
         //     ? const AppIcons.email()
         //     : const AppIcons.email(color: Colors.redAccent);
@@ -77,7 +81,8 @@ class AppTextFormField extends StatelessWidget {
     required this.controller,
     // this.onChange,
   })  : _type = AppTextFormFieldType.phone,
-        obscureText = false;
+        obscureText = false,
+        suffixIcon = null;
         // prefixIcon = null;
 
   @override
@@ -107,6 +112,7 @@ class AppTextFormField extends StatelessWidget {
             // hintStyle: Theme.of(context).textTheme.labelLarge,
             hintText: hintText,
             errorText: errorText,
+            suffixIcon: suffixIcon,
             // prefixIcon: prefixIcon != null
             //     ? AppPadding.medium(child: prefixIcon)
             //     : null,

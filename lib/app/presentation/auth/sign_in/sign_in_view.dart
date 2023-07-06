@@ -109,6 +109,7 @@ class _SignInViewState extends State<SignInView> {
                       child: AppTextFormField.password(
                         hintText: 'Enter your password',
                         controller: _passwordController,
+                        suffixIcon: const AppPadding.small(child: AppIcons.eyeSlash(),),
                       )),
                   const AppText.bodyMedium(text: 'Forgot password?'),
                   AppPadding(

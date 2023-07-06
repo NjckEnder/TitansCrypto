@@ -41,35 +41,39 @@ class _SignUpViewState extends State<SignUpView> {
             )),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            AppText.bodyMedium(
+          children: [
+            const AppText.bodyMedium(
               text: 'Email',
               color: ThemeColors.textColor2,
             ),
-            AppText.bodyMedium(
-              text: 'Register with mobile',
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/registerMobile');
+              },
+              child: const AppText.bodyMedium(
+                text: 'Register with mobile',
+              ),
             )
           ],
         ),
         AppPadding(
-          padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-          child: AppTextFormField.email(
-          hintText: 'Please enter email',
-          controller: _emailController,
-          keyboardType: TextInputType.emailAddress,
-          )
-        ),
+            padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+            child: AppTextFormField.email(
+              hintText: 'Please enter email',
+              controller: _emailController,
+              keyboardType: TextInputType.emailAddress,
+            )),
         const AppText.bodyMedium(
           text: 'Password',
           color: ThemeColors.textColor2,
         ),
         AppPadding(
-          padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-          child: AppTextFormField.password(
-          hintText: 'Enter your password',
-          controller: _passwordController,
-          )
-        ),
+            padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+            child: AppTextFormField.password(
+              hintText: 'Please enter your password',
+              controller: _passwordController,
+              suffixIcon: const AppPadding.small(child: AppIcons.eyeSlash()),
+            )),
         AppPadding(
             padding: const AppEdgeInsets.only(top: AppGapSize.medium),
             child: AppButton.max(

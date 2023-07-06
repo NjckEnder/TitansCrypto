@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:titans_crypto/theme/config/theme_data.dart';
+part of widgets;
 
 class ButtonAuth extends StatelessWidget {
   final void Function()? onPressed;
