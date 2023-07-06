@@ -3,18 +3,19 @@ part of widgets;
 class AppBackground extends StatelessWidget {
   // final bool isLoading;
   final Widget body;
-  // final Widget? appBarWidget;
+  final PreferredSizeWidget? appBar;
 
   const AppBackground({
     super.key,
     required this.body,
     // this.isLoading = false,
-    // this.appBarWidget,
+    this.appBar,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appBar,
       body: AppSizeScale(
           ratioHeight: 1,
           ratioWidth: 1,
@@ -25,6 +26,8 @@ class AppBackground extends StatelessWidget {
                     image: AssetImage(AppImageAssets.backgroundAuth),
                     fit: BoxFit.fill)),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [body],
             ),
           )),

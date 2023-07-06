@@ -101,9 +101,9 @@ class AppTextFormField extends StatelessWidget {
       maxLines: maxLines,
       inputFormatters: _type == AppTextFormFieldType.phone
           ? [
-              // FilteringTextInputFormatter.digitsOnly,
-              // LengthLimitingTextInputFormatter(11),
-              // PhoneNumberFormatter(),
+              FilteringTextInputFormatter.digitsOnly,
+              LengthLimitingTextInputFormatter(11),
+              PhoneNumberFormatter(),
             ]
           : [],
       style: textStyle ?? Theme.of(context).textTheme.bodyMedium,

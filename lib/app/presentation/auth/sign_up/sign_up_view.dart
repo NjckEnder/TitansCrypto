@@ -48,7 +48,7 @@ class _SignUpViewState extends State<SignUpView> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/registerMobile');
+                Navigator.pushReplacementNamed(context, '/registerMobile');
               },
               child: const AppText.bodyMedium(
                 text: 'Register with mobile',
