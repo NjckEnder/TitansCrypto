@@ -67,7 +67,7 @@ class _RegisterWithMobileViewState extends State<RegisterWithMobileView> {
                 title: 'Send OTP',
                 onPressed: () {
                   Navigator.pushReplacementNamed(
-                      context, '/verificationOTPCode');
+                      context, '/OTPVerification');
                 },
               )
             ],

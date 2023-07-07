@@ -23,7 +23,7 @@ class AppBackground extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: ThemeColors.backgroundColor,
                 image: DecorationImage(
-                    image: AssetImage(AppImageAssets.backgroundAuth),
+                    image: AssetImage(AppImageAssets.backgroundAuth1),
                     fit: BoxFit.fill)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,

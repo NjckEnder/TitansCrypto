@@ -10,7 +10,10 @@ class AppImageAssets{
   static const onboarding2 = 'assets/images/onboarding2.png';
   static const onboarding3 = 'assets/images/onboarding3.png';
 
-  static const backgroundAuth = 'assets/images/background_auth.png';
+  static const backgroundAuth1 = 'assets/images/background_auth1.png';
+  static const backgroundAuth2 = 'assets/images/background_auth2.png';
+
+  static const successful = 'assets/images/successful.png';
 }
 
 class AppIconsAssets{
