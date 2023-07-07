@@ -44,7 +44,7 @@ class ThemePrimary {
                 BorderSide(color: ThemeColors.primaryColor.withOpacity(0.3))),
         filled: true,
         fillColor: ThemeColors.labelColor1,
-        hintStyle: ThemeText.bodyMedium.copyWith(color: ThemeColors.textColor4),
+        hintStyle: ThemeText.bodyMedium.copyWith(color: ThemeColors.textColor4, fontSize: 14),
         // focusColor: Colors.blueGrey,
       ),
     );
