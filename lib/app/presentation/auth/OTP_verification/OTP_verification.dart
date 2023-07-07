@@ -1,18 +1,19 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:titans_crypto/app/presentation/auth/widgets/widgets_auth.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
-class VerificationOTPCode extends StatefulWidget {
-  static const String routeName = "/verificationOTPCode";
-  const VerificationOTPCode({super.key});
+class OTPVerification extends StatefulWidget {
+  static const String routeName = "/OTPVerification";
+  const OTPVerification({super.key});
 
   @override
-  State<VerificationOTPCode> createState() => _VerificationOTPCodeState();
+  State<OTPVerification> createState() => _OTPVerificationState();
 }
 
-class _VerificationOTPCodeState extends State<VerificationOTPCode> {
+class _OTPVerificationState extends State<OTPVerification> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -174,7 +175,7 @@ class _VerificationOTPCodeState extends State<VerificationOTPCode> {
                 const AppPadding.large(),
                 AppButton.max(
                   title: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {Navigator.pushReplacementNamed(context, '/successfulRegistration');},
                 )
               ],
             ),

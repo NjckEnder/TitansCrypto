@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:titans_crypto/app/presentation/auth/OTP_verification/OTP_verification.dart';
 import 'package:titans_crypto/app/presentation/auth/auth_view.dart';
 import 'package:titans_crypto/app/presentation/auth/register_mobile/register_mobile.dart';
-import 'package:titans_crypto/app/presentation/auth/verification_OTP/verification_OTP.dart';
+import 'package:titans_crypto/app/presentation/auth/successful_registration/successful_registration.dart';
 import 'package:titans_crypto/app/presentation/home_page/home_page.dart';
 import 'package:titans_crypto/app/presentation/onboarding/onboarding_view.dart';
 
@@ -27,9 +28,13 @@ class AppRoutes {
         return MaterialPageRoute(builder: (context)=>  const RegisterWithMobileView(),
         settings: const RouteSettings(name: RegisterWithMobileView.routeName)
         );
-      case VerificationOTPCode.routeName:
-        return MaterialPageRoute(builder: (context)=>  const VerificationOTPCode(),
-        settings: const RouteSettings(name: VerificationOTPCode.routeName)
+      case OTPVerification.routeName:
+        return MaterialPageRoute(builder: (context)=>  const OTPVerification(),
+        settings: const RouteSettings(name: OTPVerification.routeName)
+        );
+      case SuccessfulRegistration.routeName:
+        return MaterialPageRoute(builder: (context)=>  const SuccessfulRegistration(),
+        settings: const RouteSettings(name: SuccessfulRegistration.routeName)
         );
       default:
         return _errorRoute();
