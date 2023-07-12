@@ -24,61 +24,59 @@ class _AuthViewState extends State<AuthView> {
             builder: (context, state) {
           return AppViewLayout(
               mobileView: AppBackground(
-                  body: SingleChildScrollView(
-                    child: AppPadding(
-                        padding: const AppEdgeInsets.symmetric(
-                            horizontal: AppGapSize.medium),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const AppPadding.medium(),
-                              DecoratedBox(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12),
-                                      color: ThemeColors.labelColor1),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        AppPadding(
+                  body: AppPadding(
+                      padding: const AppEdgeInsets.symmetric(
+                          horizontal: AppGapSize.medium),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const AppPadding.medium(),
+                            DecoratedBox(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: ThemeColors.labelColor1),
+                                child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      AppPadding(
+                                        padding: const AppEdgeInsets.only(
+                                          top: AppGapSize.small,
+                                          bottom: AppGapSize.small,
+                                          left: AppGapSize.small,
+                                        ),
+                                        child: ButtonAuth(
+                                            title: 'Sign in',
+                                            titleColor:
+                                                ThemeColors.textColor5,
+                                            color: state is AuthStateSignIn
+                                                ? ThemeColors.backgroundColor
+                                                : ThemeColors.labelColor1,
+                                            onPressed: () => _onChangeTabPage(
+                                                context, state)),
+                                      ),
+                                      AppPadding(
                                           padding: const AppEdgeInsets.only(
                                             top: AppGapSize.small,
                                             bottom: AppGapSize.small,
-                                            left: AppGapSize.small,
+                                            right: AppGapSize.small,
                                           ),
                                           child: ButtonAuth(
-                                              title: 'Sign in',
+                                              title: 'Sign up',
                                               titleColor:
                                                   ThemeColors.textColor5,
-                                              color: state is AuthStateSignIn
-                                                  ? ThemeColors.backgroundColor
+                                              color: state is! AuthStateSignIn
+                                                  ? ThemeColors
+                                                      .backgroundColor
                                                   : ThemeColors.labelColor1,
-                                              onPressed: () => _onChangeTabPage(
-                                                  context, state)),
-                                        ),
-                                        AppPadding(
-                                            padding: const AppEdgeInsets.only(
-                                              top: AppGapSize.small,
-                                              bottom: AppGapSize.small,
-                                              right: AppGapSize.small,
-                                            ),
-                                            child: ButtonAuth(
-                                                title: 'Sign up',
-                                                titleColor:
-                                                    ThemeColors.textColor5,
-                                                color: state is! AuthStateSignIn
-                                                    ? ThemeColors
-                                                        .backgroundColor
-                                                    : ThemeColors.labelColor1,
-                                                onPressed: () =>
-                                                    _onChangeTabPage(
-                                                        context, state)))
-                                      ])),
-                              state is AuthStateSignIn
-                                  ? const SignInView()
-                                  : const SignUpView()
-                            ])),
-                  )));
+                                              onPressed: () =>
+                                                  _onChangeTabPage(
+                                                      context, state)))
+                                    ])),
+                            state is AuthStateSignIn
+                                ? const SignInView()
+                                : const SignUpView()
+                          ]))));
         }));
   }
 

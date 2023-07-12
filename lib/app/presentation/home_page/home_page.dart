@@ -1,48 +1,87 @@
 import 'package:flutter/material.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
+import 'package:titans_crypto/theme/config/theme_data.dart';
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   static const String routeName = "/homePage";
-  const MyHomePage({super.key});
+  const HomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _HomePageState extends State<HomePage> {
+  int currentSelect = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+  final screen = [
+    const Center(
+      child: Text('Home'),
+    ),
+    const Center(
+      child: Text('Markets'),
+    ),
+    const Center(
+      child: Text('Trades'),
+    ),
+    const Center(
+      child: Text('Activity'),
+    ),
+    const Center(
+      child: Text('Wallets'),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const AppText.bodyLarge(text: 'Home Page')
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+    return AppViewLayout(
+      mobileView: Scaffold(
+          backgroundColor: Colors.blue,
+          // appBar: AppBar(
+          //   backgroundColor: ThemeColors.backgroundColor,
+          //   title: const AppText.bodyLarge(text: 'Appbar'),
+          //   centerTitle: true,
+          // ),
+          bottomNavigationBar: AppPadding.medium(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: NavigationBar(
+                animationDuration: const Duration(seconds: 2),
+                selectedIndex: currentSelect,
+                onDestinationSelected: (index) {
+                  setState(() {
+                    currentSelect = index;
+                  });
+                },
+                destinations: const [
+                  NavigationDestination(
+                    icon: AppIcons.home(),
+                    label: 'Home',
+                    selectedIcon:  AppIcons.home(color: ThemeColors.primaryColor),
+                  ),
+                  NavigationDestination(
+                    icon: AppIcons.market(),
+                    label: 'Markets',
+                    selectedIcon: AppIcons.market(color: ThemeColors.primaryColor),
+                  ),
+                  NavigationDestination(
+                    icon: AppIcons.trade(),
+                    label: 'Trades',
+                    selectedIcon: AppIcons.trade(color: ThemeColors.primaryColor),
+                  ),
+                  NavigationDestination(
+                    icon: AppIcons.activity(),
+                    label: 'Activity',
+                    selectedIcon: AppIcons.activity(color: ThemeColors.primaryColor),
+                  ),
+                  NavigationDestination(
+                    icon: AppIcons.wallet(),
+                    label: 'Wallets',
+                    selectedIcon: AppIcons.wallet(color: ThemeColors.primaryColor),
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+          ),
+          body: screen[currentSelect]),
     );
   }
 }
