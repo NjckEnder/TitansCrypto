@@ -25,10 +25,12 @@ class AppBackground extends StatelessWidget {
                 image: DecorationImage(
                     image: AssetImage(AppImageAssets.backgroundAuth1),
                     fit: BoxFit.fill)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [body],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [body],
+              ),
             ),
           )),
     );

@@ -20,9 +20,9 @@ class AppRoutes {
           builder: (context) => const AuthView(),
           settings: const RouteSettings(name: AuthView.routeName),
         );
-      case MyHomePage.routeName:
-        return MaterialPageRoute(builder: (context)=>  const MyHomePage(),
-        settings: const RouteSettings(name: MyHomePage.routeName),
+      case HomePage.routeName:
+        return MaterialPageRoute(builder: (context)=>  const HomePage(),
+        settings: const RouteSettings(name: HomePage.routeName),
         );
       case RegisterWithMobileView.routeName:
         return MaterialPageRoute(builder: (context)=>  const RegisterWithMobileView(),

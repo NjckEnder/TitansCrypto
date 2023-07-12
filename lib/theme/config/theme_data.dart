@@ -10,6 +10,7 @@ part 'theme_text.dart';
 class ThemePrimary {
   static ThemeData theme() {
     return ThemeData(
+// theme text
       textTheme: GoogleFonts.beVietnamProTextTheme(
         ThemeText.appTextTheme(
           ThemeColors.primaryColor,
@@ -17,7 +18,9 @@ class ThemePrimary {
         ),
       ),
 //
+
       useMaterial3: true,
+
 // Theme elevated button
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -30,6 +33,7 @@ class ThemePrimary {
           elevation: 0,
         ),
       ),
+
 // Theme text form field
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
@@ -44,8 +48,20 @@ class ThemePrimary {
                 BorderSide(color: ThemeColors.primaryColor.withOpacity(0.3))),
         filled: true,
         fillColor: ThemeColors.labelColor1,
-        hintStyle: ThemeText.bodyMedium.copyWith(color: ThemeColors.textColor4, fontSize: 14),
+        hintStyle: ThemeText.bodyMedium
+            .copyWith(color: ThemeColors.textColor4, fontSize: 14),
         // focusColor: Colors.blueGrey,
+      ),
+
+// theme navigation bar
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: ThemeColors.backgroundColor,
+        indicatorColor: Colors.transparent,
+        // surfaceTintColor: Colors.amber,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        labelTextStyle: MaterialStateProperty.all(
+          const TextStyle(color: ThemeColors.textColor5, fontSize: 12),
+        ),
       ),
     );
   }

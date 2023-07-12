@@ -42,7 +42,7 @@ class _SignInViewState extends State<SignInView> {
         child: BlocListener<SignInBloc, SignInState>(
           listener: (context, state) {
             if (state is SignInSuccess) {
-              Navigator.pushNamed(context, '/homePage');
+              Navigator.pushReplacementNamed(context, '/homePage');
             }
             if (state is SignInFailState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(

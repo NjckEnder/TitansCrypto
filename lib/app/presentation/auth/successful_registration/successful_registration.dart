@@ -42,7 +42,7 @@ class _SuccessfulRegistrationState extends State<SuccessfulRegistration> {
                 ),
                 AppButton.max(
                   title: 'Get Started',
-                  onPressed: () {},
+                  onPressed: () {Navigator.pushReplacementNamed(context, '/authView');},
                 )
               ],
             ),

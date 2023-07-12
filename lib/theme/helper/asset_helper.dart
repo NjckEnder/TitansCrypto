@@ -1,10 +1,10 @@
 part of helper;
 
-class AppImageAssets{
+class AppImageAssets {
   static const logoTitans = 'assets/images/logo_titans.png';
 
   static const backgroundSplash = 'assets/images/background_splash.png';
-  
+
   static const backgroundOnboarding = 'assets/images/background_onboarding.png';
   static const onboarding1 = 'assets/images/onboarding1.png';
   static const onboarding2 = 'assets/images/onboarding2.png';
@@ -16,7 +16,7 @@ class AppImageAssets{
   static const successful = 'assets/images/successful.png';
 }
 
-class AppIconsAssets{
+class AppIconsAssets {
   static const eyeSlash = 'assets/icons/eye-slash_icon.svg';
 
   static const google = 'assets/icons/google_icon.svg';
@@ -24,4 +24,14 @@ class AppIconsAssets{
   static const facebook = 'assets/icons/facebook_icon.svg';
 
   static const fingerOn = 'assets/icons/finger-on_icon.svg';
+
+  static const home = 'assets/icons/home_icon.svg';
+
+  static const market = 'assets/icons/market_icon.svg';
+
+  static const trade = 'assets/icons/trade_icon.svg';
+
+  static const activity = 'assets/icons/activity_icon.svg';
+
+  static const wallet = 'assets/icons/wallet_icon.svg';
 }
