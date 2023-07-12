@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:titans_crypto/app/presentation/home_page/home_view/home_view.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
@@ -14,9 +15,7 @@ class _HomePageState extends State<HomePage> {
   int currentSelect = 0;
 
   final screen = [
-    const Center(
-      child: Text('Home'),
-    ),
+    const Homeview(),
     const Center(
       child: Text('Markets'),
     ),
@@ -34,17 +33,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return AppViewLayout(
       mobileView: Scaffold(
-          backgroundColor: Colors.blue,
-          // appBar: AppBar(
-          //   backgroundColor: ThemeColors.backgroundColor,
-          //   title: const AppText.bodyLarge(text: 'Appbar'),
-          //   centerTitle: true,
-          // ),
           bottomNavigationBar: AppPadding.medium(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: NavigationBar(
-                animationDuration: const Duration(seconds: 2),
+                animationDuration: const Duration(seconds: 1),
                 selectedIndex: currentSelect,
                 onDestinationSelected: (index) {
                   setState(() {

@@ -34,4 +34,12 @@ class AppIconsAssets {
   static const activity = 'assets/icons/activity_icon.svg';
 
   static const wallet = 'assets/icons/wallet_icon.svg';
+
+  static const notif = 'assets/icons/notif_icon.svg';
+
+  static const notifOn = 'assets/icons/notif-on_icon.svg';
+
+  static const scanner = 'assets/icons/scanner_icon.svg';
+
+  static const search = 'assets/icons/search_icon.svg';
 }

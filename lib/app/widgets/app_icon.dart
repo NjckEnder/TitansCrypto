@@ -30,6 +30,18 @@ class AppIcons extends StatelessWidget {
   const AppIcons.wallet({super.key, this.color})
       : _urlIcon = AppIconsAssets.wallet;
 
+  const AppIcons.notif({super.key, this.color})
+      : _urlIcon = AppIconsAssets.notif;
+
+  const AppIcons.notifOn({super.key, this.color})
+      : _urlIcon = AppIconsAssets.notifOn;
+
+  const AppIcons.scanner({super.key, this.color})
+      : _urlIcon = AppIconsAssets.scanner;
+
+  const AppIcons.search({super.key, this.color})
+      : _urlIcon = AppIconsAssets.search;
+
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(_urlIcon,
