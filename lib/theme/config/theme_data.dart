@@ -53,15 +53,20 @@ class ThemePrimary {
         // focusColor: Colors.blueGrey,
       ),
 
-// theme navigation bar
-      navigationBarTheme: NavigationBarThemeData(
+// theme bottom navigation bar
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: ThemeColors.backgroundColor,
-        indicatorColor: Colors.transparent,
-        // surfaceTintColor: Colors.amber,
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-        labelTextStyle: MaterialStateProperty.all(
-          const TextStyle(color: ThemeColors.textColor5, fontSize: 12),
-        ),
+        elevation: 0,
+        type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: TextStyle(fontSize: 12),
+        unselectedLabelStyle: TextStyle(fontSize: 12),
+        selectedItemColor: ThemeColors.textColor5,
+        unselectedItemColor: ThemeColors.textColor4,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedIconTheme: IconThemeData(size: 50),
+        enableFeedback: true
+        // unselectedIconTheme: IconThemeData(size: 0),
       ),
     );
   }
