@@ -109,7 +109,9 @@ class _SignInViewState extends State<SignInView> {
                       child: AppTextFormField.password(
                         hintText: 'Enter your password',
                         controller: _passwordController,
-                        suffixIcon: const AppPadding.small(child: AppIcons.eyeSlash(),),
+                        suffixIcon: const AppPadding.small(
+                          child: AppIcons.eyeSlash(),
+                        ),
                       )),
                   const AppText.bodyMedium(text: 'Forgot password?'),
                   AppPadding(
@@ -130,10 +132,16 @@ class _SignInViewState extends State<SignInView> {
                         color: ThemeColors.textColor4,
                       ))),
                   const SignInRowButton(),
-                  const AppPadding(
-                      padding:
-                          AppEdgeInsets.symmetric(vertical: AppGapSize.medium),
-                      child: Center(child: AppIcons.fingerOn())),
+                  AppPadding(
+                      padding: const AppEdgeInsets.symmetric(
+                          vertical: AppGapSize.medium),
+                      child: Center(
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/homePage');
+                              },
+                              child: const AppIcons.fingerOn()))),
                   const Center(
                       child: AppText.bodyMedium(
                     text: 'Use fingerprint instead?',

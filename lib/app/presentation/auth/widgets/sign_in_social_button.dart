@@ -13,14 +13,12 @@ class SignInSocialButton extends StatelessWidget {
   });
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return ElevatedButton(
       style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
           backgroundColor: MaterialStateProperty.all(ThemeColors.textColor1),
-          shape: MaterialStateProperty.all<OutlinedBorder>(
-              RoundedRectangleBorder(
+          shape:
+              MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(
                   // side: const BorderSide(color: Color(0xFFF4F4F4), width: 1),
                   borderRadius: BorderRadius.circular(16.0)))),
       onPressed: onPressed,
@@ -32,8 +30,8 @@ class SignInSocialButton extends StatelessWidget {
           children: [
             iconWidget,
             AppPadding(
-                padding: const AppEdgeInsets.symmetric(
-                    horizontal: AppGapSize.small),
+                padding:
+                    const AppEdgeInsets.symmetric(horizontal: AppGapSize.small),
                 child: AppText.titleSmall(
                   text: title,
                   color: ThemeColors.backgroundColor,

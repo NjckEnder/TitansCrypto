@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titans_crypto/app/presentation/home_page/home_view/home_view.dart';
+import 'package:titans_crypto/app/presentation/home_page/widgets/home_widgets.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
 
@@ -32,49 +33,43 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AppViewLayout(
-      mobileView: Scaffold(
-          bottomNavigationBar: AppPadding.medium(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: NavigationBar(
-                animationDuration: const Duration(seconds: 1),
-                selectedIndex: currentSelect,
-                onDestinationSelected: (index) {
-                  setState(() {
-                    currentSelect = index;
-                  });
-                },
-                destinations: const [
-                  NavigationDestination(
-                    icon: AppIcons.home(),
-                    label: 'Home',
-                    selectedIcon:  AppIcons.home(color: ThemeColors.primaryColor),
-                  ),
-                  NavigationDestination(
-                    icon: AppIcons.market(),
-                    label: 'Markets',
-                    selectedIcon: AppIcons.market(color: ThemeColors.primaryColor),
-                  ),
-                  NavigationDestination(
-                    icon: AppIcons.trade(),
-                    label: 'Trades',
-                    selectedIcon: AppIcons.trade(color: ThemeColors.primaryColor),
-                  ),
-                  NavigationDestination(
-                    icon: AppIcons.activity(),
-                    label: 'Activity',
-                    selectedIcon: AppIcons.activity(color: ThemeColors.primaryColor),
-                  ),
-                  NavigationDestination(
-                    icon: AppIcons.wallet(),
-                    label: 'Wallets',
-                    selectedIcon: AppIcons.wallet(color: ThemeColors.primaryColor),
-                  ),
-                ],
-              ),
-            ),
+      mobileView: BackgroundBottomBar(
+        currentIndex: currentSelect,
+        onTap: (index) {
+          setState(() {
+            currentSelect = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: AppIcons.home(color: ThemeColors.textColor4),
+            activeIcon: AppIcons.home(color: ThemeColors.primaryColor),
+            label: 'Home',
+            // backgroundColor: ThemeColors.backgroundColor,
           ),
-          body: screen[currentSelect]),
+          BottomNavigationBarItem(
+            icon: AppIcons.market(color: ThemeColors.textColor4),
+            activeIcon: AppIcons.market(color: ThemeColors.primaryColor),
+            label: 'Markets',
+          ),
+          BottomNavigationBarItem(
+            icon: AppIcons.trade(color: ThemeColors.textColor4),
+            activeIcon: AppIcons.trade(color: ThemeColors.primaryColor),
+            label: 'Trades',
+          ),
+          BottomNavigationBarItem(
+            icon: AppIcons.activity(color: ThemeColors.textColor4),
+            activeIcon: AppIcons.activity(color: ThemeColors.primaryColor),
+            label: 'Activity',
+          ),
+          BottomNavigationBarItem(
+            icon: AppIcons.wallet(color: ThemeColors.textColor4),
+            activeIcon: AppIcons.wallet(color: ThemeColors.primaryColor),
+            label: 'Wallets',
+          ),
+        ],
+        body: screen[currentSelect],
+      ),
     );
   }
 }
