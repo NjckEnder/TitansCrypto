@@ -45,6 +45,9 @@ class AppIcons extends StatelessWidget {
   const AppIcons.arrowForward({super.key, this.color})
       : _urlIcon = AppIconsAssets.arrowForward;
 
+  const AppIcons.btcSmall({super.key, this.color})
+      : _urlIcon = AppIconsAssets.btcSmall;
+
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(_urlIcon,

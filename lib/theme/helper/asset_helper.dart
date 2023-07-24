@@ -15,11 +15,8 @@ class AppImageAssets {
 
   static const successful = 'assets/images/successful.png';
 
-  // static const backgroundPayment = 'assets/images/background_payment.png';
-  static const backgroundPayment = 'assets/images/background_payment.png';
   static const credit = 'assets/images/credit.png';
   static const rocket = 'assets/images/rocket.png';
-  
 }
 
 class AppIconsAssets {
@@ -50,4 +47,6 @@ class AppIconsAssets {
   static const search = 'assets/icons/search_icon.svg';
 
   static const arrowForward = 'assets/icons/arrow-forward_icon.svg';
+
+  static const btcSmall = 'assets/icons/btc-small.svg';
 }
