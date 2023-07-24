@@ -30,10 +30,10 @@ class BackgroundBottomBar extends StatelessWidget {
               child: AppPadding.medium(
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    // borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: ThemeColors.backgroundColor.withOpacity(0.8),
+                        color: ThemeColors.backgroundColor.withOpacity(0.5),
                         blurRadius: 40,
                         offset: const Offset(0, 4),
                       ),

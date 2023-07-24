@@ -64,7 +64,7 @@ class ThemePrimary {
         unselectedItemColor: ThemeColors.textColor4,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        selectedIconTheme: IconThemeData(size: 50),
+        selectedIconTheme: IconThemeData(size: 34),
         enableFeedback: true
         // unselectedIconTheme: IconThemeData(size: 0),
       ),
