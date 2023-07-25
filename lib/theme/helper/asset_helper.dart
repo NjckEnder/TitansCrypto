@@ -57,4 +57,8 @@ class AppIconsAssets {
   static const more = 'assets/icons/more_icon.svg';
 
   static const referral = 'assets/icons/referral_icon.svg';
+
+  static const arrowBack = 'assets/icons/arrow-back_icon.svg';
+
+  static const filter = 'assets/icons/filter_icon.svg';
 }

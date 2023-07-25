@@ -4,6 +4,7 @@ import 'package:titans_crypto/app/presentation/auth/auth_view.dart';
 import 'package:titans_crypto/app/presentation/auth/register_mobile/register_mobile.dart';
 import 'package:titans_crypto/app/presentation/auth/successful_registration/successful_registration.dart';
 import 'package:titans_crypto/app/presentation/home_page/home_page.dart';
+import 'package:titans_crypto/app/presentation/notification/notification.dart';
 import 'package:titans_crypto/app/presentation/onboarding/onboarding_view.dart';
 
 class AppRoutes {
@@ -35,6 +36,10 @@ class AppRoutes {
       case SuccessfulRegistration.routeName:
         return MaterialPageRoute(builder: (context)=>  const SuccessfulRegistration(),
         settings: const RouteSettings(name: SuccessfulRegistration.routeName)
+        );
+      case NotificationView.routeName:
+        return MaterialPageRoute(builder: (context)=>  const NotificationView(),
+        settings: const RouteSettings(name: NotificationView.routeName)
         );
       default:
         return _errorRoute();

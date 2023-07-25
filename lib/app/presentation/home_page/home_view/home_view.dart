@@ -20,13 +20,21 @@ class _HomeviewState extends State<Homeview> {
         backgroundColor: ThemeColors.backgroundColor,
         leading: const AppPadding.small(
             child: CircleAvatar(child: Icon(Icons.person))),
-        actions: const [
-          AppIcons.search(),
-          AppPadding(
-            padding: AppEdgeInsets.symmetric(horizontal: AppGapSize.medium),
-            child: AppIcons.scanner(),
+        actions: [
+          IconButton(
+            icon: const AppIcons.search(),
+            onPressed: () {},
           ),
-          AppIcons.notif(),
+          IconButton(
+            icon: const AppIcons.scanner(),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const AppIcons.notif(),
+            onPressed: () {
+              Navigator.pushNamed(context, '/notificationView');
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(

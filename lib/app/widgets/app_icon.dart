@@ -54,11 +54,16 @@ class AppIcons extends StatelessWidget {
   const AppIcons.referral({super.key, this.color})
       : _urlIcon = AppIconsAssets.referral;
 
-  const AppIcons.more({super.key, this.color})
-      : _urlIcon = AppIconsAssets.more;
+  const AppIcons.more({super.key, this.color}) : _urlIcon = AppIconsAssets.more;
 
   const AppIcons.gridTrading({super.key, this.color})
       : _urlIcon = AppIconsAssets.gridTrading;
+
+  const AppIcons.arrowBack({super.key, this.color})
+      : _urlIcon = AppIconsAssets.arrowBack;
+
+  const AppIcons.filter({super.key, this.color})
+      : _urlIcon = AppIconsAssets.filter;
 
   @override
   Widget build(BuildContext context) {
