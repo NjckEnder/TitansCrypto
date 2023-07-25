@@ -15,6 +15,7 @@ class _HomeviewState extends State<Homeview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ThemeColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: ThemeColors.backgroundColor,
         leading: const AppPadding.small(
@@ -31,24 +32,7 @@ class _HomeviewState extends State<Homeview> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            AppSizeScale(
-              ratioHeight: 0.23,
-              backgroundColor: Colors.amber,
-                child: GridView.builder(
-                    itemCount: 4 * 2,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
-                    ),
-                    itemBuilder: (context, index) {
-                      return AppPadding.small(
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          color: Colors.black54,
-                        ),
-                      );
-                    })),
+            const Categories(),
             AppPadding(
               padding: const AppEdgeInsets.only(top: AppGapSize.medium),
               child: Column(
@@ -70,25 +54,7 @@ class _HomeviewState extends State<Homeview> {
                       onPressed: () {},
                     ),
                   ),
-                  const AppPadding(
-                    padding: AppEdgeInsets.symmetric(
-                        horizontal: AppGapSize.medium),
-                    child: AppText.titleSmall(
-                      text: 'Recent Coin',
-                      color: ThemeColors.backgroundColor,
-                    ),
-                  ),
-                  const CoinList(),
-                  const AppPadding(
-                    padding: AppEdgeInsets.symmetric(
-                        horizontal: AppGapSize.medium),
-                    child: AppText.titleSmall(
-                      text: 'Top Coins',
-                      color: ThemeColors.backgroundColor,
-                    ),
-                  ),
-                  const CoinList(),
-                  const SizedBox(height: 100,)
+                  const CategoryCoin(),
                 ],
               ),
             ),

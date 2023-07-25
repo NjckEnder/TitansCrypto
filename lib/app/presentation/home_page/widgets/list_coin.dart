@@ -1,49 +1,48 @@
 part of home_wigets;
 
-class CoinList extends StatelessWidget {
-  const CoinList({
+class ListCoin extends StatelessWidget {
+  const ListCoin({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return AppPadding(
-      padding: const AppEdgeInsets.only(left: AppGapSize.medium),
-      child: AppSizeScale(
-        ratioHeight: 0.13,
-        backgroundColor: Colors.transparent,
-        child: ListView.builder(
-          clipBehavior: Clip.none,
-          scrollDirection: Axis.horizontal,
-          itemCount: 5,
-          itemBuilder: (context, index) => AppPadding(
-            padding: const AppEdgeInsets.only(right: AppGapSize.small),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      child: GridView.builder(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: 6,
+        itemBuilder: (context, index) {
+          return AppPadding(
+            padding: const AppEdgeInsets.only(
+                top: AppGapSize.medium,
+                left: AppGapSize.small,
+                right: AppGapSize.small),
             child: DecoratedBox(
               decoration: BoxDecoration(
-                  color: ThemeColors.textColor1,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: const [
-                    BoxShadow(
-                        color: ThemeColors.labelColor2,
-                        blurRadius: 20,
-                        blurStyle: BlurStyle.outer)
-                  ]),
+                color: ThemeColors.textColor1,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              // boxShadow: const [
+              //   BoxShadow(
+              //       color: ThemeColors.labelColor2,
+              //       blurRadius: 20,
+              //       blurStyle: BlurStyle.outer)
+              // ]),
               child: AppPadding.small(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AppSizeScale(
-                      ratioWidth: 0.44,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          AppText.bodyLarge(text: '40,059.83'),
-                          AppIcons.btcSmall()
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        AppText.bodyLarge(text: '40,059.83'),
+                        AppIcons.btcSmall()
+                      ],
                     ),
                     Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
                         AppPadding(
                           padding: AppEdgeInsets.only(right: AppGapSize.small),
@@ -56,7 +55,7 @@ class CoinList extends StatelessWidget {
                       ],
                     ),
                     AppSizeScale(
-                      ratioHeight: 0.04,
+                      ratioHeight: 0.05,
                       ratioWidth: 0.44,
                       child: LineChart(
                         LineChartData(
@@ -108,8 +107,8 @@ class CoinList extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
