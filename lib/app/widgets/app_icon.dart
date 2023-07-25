@@ -48,6 +48,18 @@ class AppIcons extends StatelessWidget {
   const AppIcons.btcSmall({super.key, this.color})
       : _urlIcon = AppIconsAssets.btcSmall;
 
+  const AppIcons.deposit({super.key, this.color})
+      : _urlIcon = AppIconsAssets.deposit;
+
+  const AppIcons.referral({super.key, this.color})
+      : _urlIcon = AppIconsAssets.referral;
+
+  const AppIcons.more({super.key, this.color})
+      : _urlIcon = AppIconsAssets.more;
+
+  const AppIcons.gridTrading({super.key, this.color})
+      : _urlIcon = AppIconsAssets.gridTrading;
+
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(_urlIcon,

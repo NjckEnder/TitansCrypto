@@ -7,4 +7,6 @@ import 'package:titans_crypto/theme/config/theme_data.dart';
 
 part 'bottombar.dart';
 part 'payment.dart';
-part 'coin_list.dart';
+part 'list_coin.dart';
+part 'categories.dart';
+part 'category_coin.dart';

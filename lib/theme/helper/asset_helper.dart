@@ -49,4 +49,12 @@ class AppIconsAssets {
   static const arrowForward = 'assets/icons/arrow-forward_icon.svg';
 
   static const btcSmall = 'assets/icons/btc-small.svg';
+
+  static const deposit = 'assets/icons/deposit_icon.svg';
+
+  static const gridTrading = 'assets/icons/grid-trading_icon.svg';
+
+  static const more = 'assets/icons/more_icon.svg';
+
+  static const referral = 'assets/icons/referral_icon.svg';
 }
