@@ -54,17 +54,17 @@ class ThemePrimary {
       ),
 
 // theme bottom navigation bar
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: ThemeColors.backgroundColor,
+      bottomNavigationBarTheme:  BottomNavigationBarThemeData(
+        backgroundColor: ThemeColors.backgroundColor.withOpacity(0.9),
         elevation: 0,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: TextStyle(fontSize: 12),
-        unselectedLabelStyle: TextStyle(fontSize: 12),
+        selectedLabelStyle: const TextStyle(fontSize: 12),
+        unselectedLabelStyle: const TextStyle(fontSize: 12),
         selectedItemColor: ThemeColors.textColor5,
         unselectedItemColor: ThemeColors.textColor4,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        selectedIconTheme: IconThemeData(size: 34),
+        selectedIconTheme: const IconThemeData(size: 34),
         enableFeedback: true
         // unselectedIconTheme: IconThemeData(size: 0),
       ),

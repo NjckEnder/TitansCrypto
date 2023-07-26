@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
+import 'package:titans_crypto/theme/helper/helper.dart';
 
 class NotificationView extends StatelessWidget {
   static const String routeName = "/notificationView";
@@ -40,40 +41,52 @@ class NotificationView extends StatelessWidget {
                     )),
                 AppIcons.filter()
               ]),
-              AppSizeScale(
-                ratioHeight: 1,
-                child: ListView.builder(
-                    clipBehavior: Clip.none,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const AppText.bodyLarge(
-                            text: 'Withdrawal Successful',
-                            color: ThemeColors.textColor5,
-                            textAlign: TextAlign.start,
-                          ),
-                          const AppText.bodyMedium(
-                            text:
-                                'You have successfully withdrawed lorem ipsum dolor sit ',
-                            color: ThemeColors.textColor4,
-                            textAlign: TextAlign.start,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          AppPadding(
-                            padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
-                            child: Divider(
-                              color: ThemeColors.textColor1.withOpacity(0.2),
-                              thickness: 0.5
-                            ),
-                          )
-                        ],
-                      );
-                    }),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height*0.2,),
+                    AppPadding(
+                      padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+                      child: Image.asset(AppImageAssets.notification)),
+                    const AppText.bodyMedium(text: 'You have no notifications', color: ThemeColors.textColor1,),
+                  ],
+                ),
               ),
+              // AppSizeScale(
+              //   ratioHeight: 1,
+              //   child: ListView.builder(
+              //       clipBehavior: Clip.none,
+              //       physics: const NeverScrollableScrollPhysics(),
+              //       itemCount: 5,
+              //       itemBuilder: (context, index) {
+              //         return Column(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           children: [
+              //             const AppText.bodyLarge(
+              //               text: 'Withdrawal Successful',
+              //               color: ThemeColors.textColor5,
+              //               textAlign: TextAlign.start,
+              //             ),
+              //             const AppText.bodyMedium(
+              //               text:
+              //                   'You have successfully withdrawed lorem ipsum dolor sit ',
+              //               color: ThemeColors.textColor4,
+              //               textAlign: TextAlign.start,
+              //               maxLines: 1,
+              //               overflow: TextOverflow.ellipsis,
+              //             ),
+              //             AppPadding(
+              //               padding: const AppEdgeInsets.symmetric(vertical: AppGapSize.small),
+              //               child: Divider(
+              //                 color: ThemeColors.textColor1.withOpacity(0.2),
+              //                 thickness: 0.5
+              //               ),
+              //             )
+              //           ],
+              //         );
+              //       }),
+              // ),
             ],
           ),
         ),

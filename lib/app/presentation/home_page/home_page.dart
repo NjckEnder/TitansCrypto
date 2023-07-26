@@ -1,8 +1,16 @@
+library home_page;
+
 import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/presentation/home_page/home_view/home_view.dart';
 import 'package:titans_crypto/app/presentation/home_page/widgets/home_widgets.dart';
 import 'package:titans_crypto/app/widgets/app_widgets.dart';
 import 'package:titans_crypto/theme/config/theme_data.dart';
+import 'package:titans_crypto/theme/helper/helper.dart';
+
+part 'home_view/home_view.dart';
+part 'markets_view/markets_view.dart';
+part 'trades_view/trades_view.dart';
+part 'activity_view/activity_view.dart';
+part 'wallets_view/wallets_view.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/homePage";
@@ -17,18 +25,10 @@ class _HomePageState extends State<HomePage> {
 
   final screen = [
     const Homeview(),
-    const Center(
-      child: Text('Markets'),
-    ),
-    const Center(
-      child: Text('Trades'),
-    ),
-    const Center(
-      child: Text('Activity'),
-    ),
-    const Center(
-      child: Text('Wallets'),
-    ),
+    const MarketsView(),
+    const TradesView(),
+    const ActivityView(),
+    const WalletsView(),
   ];
   @override
   Widget build(BuildContext context) {
