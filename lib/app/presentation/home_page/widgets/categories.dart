@@ -48,34 +48,35 @@ class _CategoriesState extends State<Categories> {
             top: AppGapSize.medium,
             left: AppGapSize.medium,
             right: AppGapSize.medium),
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          ...List.generate(
-              categories.length,
-              (index) => GestureDetector(
-                  onTap: () {},
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.07,
-                            width: MediaQuery.of(context).size.height * 0.07,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                  color: ThemeColors.backgroundColor
-                                      .withOpacity(0.7),
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: ThemeColors.primaryColor
-                                            .withOpacity(0.1),
-                                        blurRadius: 10)
-                                  ]),
-                              child: categories[index]['icon'],
-                            )),
-                        categories[index]['text']
-                      ])))
-        ]));
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ...List.generate(
+                categories.length,
+                (index) => Column(children: [
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.09,
+                          width: MediaQuery.of(context).size.height * 0.09,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                                color: ThemeColors.backgroundColor
+                                    .withOpacity(0.7),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: ThemeColors.primaryColor
+                                          .withOpacity(0.1),
+                                      blurRadius: 10)
+                                ]),
+                            // child: categories[index]['icon'],
+                            child: IconButton(
+                              icon: categories[index]['icon'],
+                              onPressed: () {},
+                            ),
+                          )),
+                      categories[index]['text']
+                    ]))
+          ],
+        ));
   }
 }

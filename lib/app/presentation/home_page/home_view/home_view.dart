@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:titans_crypto/app/presentation/home_page/widgets/home_widgets.dart';
-import 'package:titans_crypto/app/widgets/app_widgets.dart';
-import 'package:titans_crypto/theme/config/theme_data.dart';
-import 'package:titans_crypto/theme/helper/helper.dart';
+part of home_page;
 
 class Homeview extends StatefulWidget {
   const Homeview({super.key});

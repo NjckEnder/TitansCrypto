@@ -17,6 +17,8 @@ class AppImageAssets {
 
   static const credit = 'assets/images/credit.png';
   static const rocket = 'assets/images/rocket.png';
+
+  static const notification = 'assets/images/notification.png';
 }
 
 class AppIconsAssets {
