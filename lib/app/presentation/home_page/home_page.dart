@@ -45,7 +45,6 @@ class _HomePageState extends State<HomePage> {
             icon: AppIcons.home(color: ThemeColors.textColor4),
             activeIcon: AppIcons.home(color: ThemeColors.primaryColor),
             label: 'Home',
-            // backgroundColor: ThemeColors.backgroundColor,
           ),
           BottomNavigationBarItem(
             icon: AppIcons.market(color: ThemeColors.textColor4),
