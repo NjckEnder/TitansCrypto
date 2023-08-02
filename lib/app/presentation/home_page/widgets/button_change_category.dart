@@ -1,13 +1,13 @@
 part of home_wigets;
 
 
-class ButtonChangeMarkets extends StatelessWidget {
+class ButtonChangeCategory extends StatelessWidget {
   final void Function()? onPressed;
   final String title;
   final Color? color;
   final Color? titleColor;
 
-  const ButtonChangeMarkets({
+  const ButtonChangeCategory({
     super.key,
     this.onPressed,
     required this.title,
@@ -17,11 +17,11 @@ class ButtonChangeMarkets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height * 0.06;
-    double width = MediaQuery.of(context).size.width * 0.23;
+    // double height = MediaQuery.of(context).size.height * 0.06;
+    // double width = MediaQuery.of(context).size.width * 0.23;
     return SizedBox(
-        width: width,
-        height: height,
+        // width: width,
+        // height: height,
         child: DecoratedBox(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
