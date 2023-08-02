@@ -63,4 +63,10 @@ class AppIconsAssets {
   static const arrowBack = 'assets/icons/arrow-back_icon.svg';
 
   static const filter = 'assets/icons/filter_icon.svg';
+
+  static const coin = 'assets/icons/coin_icon.svg';
+
+  static const shoppingCart = 'assets/icons/shopping-cart_icon.svg';
+
+  static const walletTick = 'assets/icons/wallet-tick_icon.svg';
 }

@@ -65,6 +65,15 @@ class AppIcons extends StatelessWidget {
   const AppIcons.filter({super.key, this.color})
       : _urlIcon = AppIconsAssets.filter;
 
+  const AppIcons.coin({super.key, this.color})
+      : _urlIcon = AppIconsAssets.coin;
+  
+  const AppIcons.shoppingCart({super.key, this.color})
+      : _urlIcon = AppIconsAssets.shoppingCart;
+  
+  const AppIcons.walletTick({super.key, this.color})
+      : _urlIcon = AppIconsAssets.walletTick;
+
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(_urlIcon,
