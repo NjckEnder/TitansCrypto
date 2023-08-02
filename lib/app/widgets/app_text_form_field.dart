@@ -9,7 +9,7 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   // final Function(String)? onChange;
   final TextEditingController controller;
-  final String? errorText;
+  // final String? errorText;
   final TextStyle? textStyle;
   final AppTextFormFieldType _type;
   final InputDecoration? decoration;
@@ -23,7 +23,7 @@ class AppTextFormField extends StatelessWidget {
       this.suffixIcon,
       required this.hintText,
       this.obscureText = false,
-      this.errorText,
+      // this.errorText,
       this.enabled,
       this.decoration,
       this.textStyle,
@@ -37,7 +37,7 @@ class AppTextFormField extends StatelessWidget {
     super.key,
     this.suffixIcon,
     required this.hintText,
-    this.errorText,
+    // this.errorText,
     this.textStyle,
     this.maxLines = 1,
     this.keyboardType,
@@ -54,7 +54,7 @@ class AppTextFormField extends StatelessWidget {
   const AppTextFormField.email({
     super.key,
     required this.hintText,
-    this.errorText,
+    // this.errorText,
     this.textStyle,
     this.maxLines = 1,
     this.decoration,
@@ -72,7 +72,7 @@ class AppTextFormField extends StatelessWidget {
   const AppTextFormField.phone({
     super.key,
     required this.hintText,
-    this.errorText,
+    // this.errorText,
     this.keyboardType,
     this.textStyle,
     this.maxLines = 1,
@@ -111,7 +111,7 @@ class AppTextFormField extends StatelessWidget {
           InputDecoration(
             // hintStyle: Theme.of(context).textTheme.labelLarge,
             hintText: hintText,
-            errorText: errorText,
+            // errorText: errorText,
             suffixIcon: suffixIcon,
             // prefixIcon: prefixIcon != null
             //     ? AppPadding.medium(child: prefixIcon)

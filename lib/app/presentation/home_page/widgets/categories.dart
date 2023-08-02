@@ -39,7 +39,7 @@ class _CategoriesState extends State<Categories> {
     },
   ];
 
-  int _current = 0;
+  // int _current = 0;
 
   @override
   Widget build(BuildContext context) {
